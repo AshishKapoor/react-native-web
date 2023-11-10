@@ -14,7 +14,7 @@ export interface RadioGroupItemWithLabelProps {
   label: string;
 }
 
-export interface RadioGroupOptions {
+export interface RadioGroupOptionsProps {
   userType: string;
   setUserType: (value: string) => void;
 }

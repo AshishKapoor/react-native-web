@@ -1,9 +1,9 @@
 import React from "react";
 import { RadioGroup, View, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
-import { RadioGroupOptions } from "../utils/types";
+import { type RadioGroupOptionsProps } from "../utils/types";
 
-const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptions) => {
+const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptionsProps) => {
   const isManager = userType === "Manager";
   const isAdmin = userType === "Admin";
   return (
