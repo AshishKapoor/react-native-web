@@ -1,5 +1,4 @@
 import React from "react";
-import { Platform } from "react-native";
 import { RadioGroup, View, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
 
