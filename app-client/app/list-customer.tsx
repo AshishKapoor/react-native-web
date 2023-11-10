@@ -27,7 +27,7 @@ export default function CustomersScreen() {
       },
     },
   });
-  const filteredCustomers = data?.listZellerCustomers?.items);
+  const filteredCustomers = data?.listZellerCustomers?.items
 
   return (
     <View style={styles.container}>
