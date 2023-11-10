@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Empty Screen</Text>
+      <Text testID="empty-text" style={styles.title}>
+        Empty Screen
+      </Text>
     </View>
   );
 }

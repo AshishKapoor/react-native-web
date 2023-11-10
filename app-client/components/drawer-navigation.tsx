@@ -3,4 +3,6 @@ import { withLayoutContext } from "expo-router";
 
 const { Navigator } = createDrawerNavigator();
 
-export const Drawer = withLayoutContext(Navigator);
+const DrawerNavigation = withLayoutContext(Navigator);
+
+export default DrawerNavigation;

@@ -1,7 +1,7 @@
 import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import React, { useEffect } from "react";
-import { Drawer } from "../components/drawer";
+import DrawerNavigation from "../components/drawer-navigation";
 // this provides some helpful reset styles to ensure a more consistent look
 // only import this from your web app, not native
 import "@tamagui/core/reset.css";
@@ -14,11 +14,6 @@ export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
 } from "expo-router";
-
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
-};
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -52,22 +47,22 @@ export default function RootLayout() {
   return (
     <ApolloProvider client={client}>
       <TamaguiProvider config={config}>
-        <Drawer>
-          <Drawer.Screen
+        <DrawerNavigation>
+          <DrawerNavigation.Screen
             name="index"
             options={{
               drawerLabel: "Home",
               title: "Home",
             }}
           />
-          <Drawer.Screen
+          <DrawerNavigation.Screen
             name="list-customer"
             options={{
               drawerLabel: "List Customers",
               title: "Customers",
             }}
           />
-        </Drawer>
+        </DrawerNavigation>
       </TamaguiProvider>
     </ApolloProvider>
   );
