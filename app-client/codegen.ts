@@ -2,7 +2,7 @@ import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: "http://localhost:9002",
-  // this assumes that all your source files are in a top-level `src/` directory - you might need to adjust this to your file structure
+  // TODO: This documents config might be causing the issue with expo router app based navigation instead of traditional src folder
   documents: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   generates: {
     "./__generated__/": {
