@@ -12,6 +12,8 @@ const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptions) => (
     aria-labelledby="Select one item"
     defaultValue={userType}
     name="form"
+    accentColor="#4169e1"
+    native
     onValueChange={(value: string) => setUserType(value)}
   >
     <YStack width={300} alignItems="center" space="$2">
