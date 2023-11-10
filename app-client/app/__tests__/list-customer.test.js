@@ -1,5 +1,5 @@
-import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import React from "react";
+import { render, waitFor, screen } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
 import { LIST_ZELLER_CUSTOMERS } from "../../query-services/list-customers";
 import CustomersScreen from "../list-customer";
@@ -39,10 +39,14 @@ const mocks = [
   },
 ];
 
-it.skip("renders without error", async () => {
+it.skip("renders a list of Zeller customers", async () => {
   render(
     <MockedProvider mocks={mocks} addTypename={false}>
       <CustomersScreen />
     </MockedProvider>
   );
+
+  await waitFor(() => {
+    expect(screen.getByText("TestCustomer2")).toBeInTheDocument();
+  });
 });
