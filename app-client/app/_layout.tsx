@@ -2,7 +2,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import React, { useEffect } from "react";
-import { Drawer } from "../components/Drawer";
+import { Drawer } from "../components/drawer";
 // this provides some helpful reset styles to ensure a more consistent look
 // only import this from your web app, not native
 import "@tamagui/core/reset.css";
@@ -26,8 +26,8 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    ...FontAwesome.font,
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
   });
 
   const client = new ApolloClient({
