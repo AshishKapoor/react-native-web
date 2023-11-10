@@ -9,6 +9,7 @@ import "@tamagui/core/reset.css";
 
 import { TamaguiProvider } from "tamagui";
 import config from "../tamagui.config";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -29,6 +30,11 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: "http://localhost:9002/graphql",
+  });
+
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
@@ -45,23 +51,25 @@ export default function RootLayout() {
   }
 
   return (
-    <TamaguiProvider config={config}>
-      <Drawer>
-        <Drawer.Screen
-          name="index"
-          options={{
-            drawerLabel: "Home",
-            title: "Home",
-          }}
-        />
-        <Drawer.Screen
-          name="list-customer"
-          options={{
-            drawerLabel: "List Customers",
-            title: "Customers",
-          }}
-        />
-      </Drawer>
-    </TamaguiProvider>
+    <ApolloProvider client={client}>
+      <TamaguiProvider config={config}>
+        <Drawer>
+          <Drawer.Screen
+            name="index"
+            options={{
+              drawerLabel: "Home",
+              title: "Home",
+            }}
+          />
+          <Drawer.Screen
+            name="list-customer"
+            options={{
+              drawerLabel: "List Customers",
+              title: "Customers",
+            }}
+          />
+        </Drawer>
+      </TamaguiProvider>
+    </ApolloProvider>
   );
 }

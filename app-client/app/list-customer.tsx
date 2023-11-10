@@ -2,10 +2,33 @@ import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { RadioGroup, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/RadioGroupItemWithLabel";
+import { useQuery, gql } from "@apollo/client";
 
 export default function CustomersScreen() {
   const [userType, setUserType] = useState("Admin");
-  console.log('userType: ', userType);
+  const LIST_ZELLER_CUSTOMERS = gql`
+    query ListZellerCustomers($filter: TableZellerCustomerFilterInput) {
+      listZellerCustomers(filter: $filter) {
+        items {
+          id
+          name
+          role
+          email
+        }
+      }
+    }
+  `;
+  const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
+    variables: {
+      filter: {
+        role: {
+          eq: "Manager",
+        },
+      },
+    },
+  });
+  const filteredCustomers = data?.listZellerCustomers?.items);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>User Types</Text>
