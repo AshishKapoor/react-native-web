@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
-import CustomerListItem from "./customer-list-item";
 import { type Customer } from "../utils/types";
+import CustomerListItem from "./customer-list-item";
 
 export default function DisplayCustomers(props: { customers: [Customer] }) {
   const { customers } = props;

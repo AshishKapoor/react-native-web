@@ -1,7 +1,7 @@
-import { RadioGroup, View, YStack } from "tamagui";
-import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
 import React from "react";
 import { Platform } from "react-native";
+import { RadioGroup, View, YStack } from "tamagui";
+import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
 
 interface RadioGroupOptions {
   userType: string;
@@ -9,15 +9,14 @@ interface RadioGroupOptions {
 }
 
 const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptions) => {
-  const isManager = Platform.OS === "ios" && userType === "Manager";
-  const isAdmin = Platform.OS === "ios" && userType === "Admin";
+  const isManager = userType === "Manager";
+  const isAdmin = userType === "Admin";
   return (
     <RadioGroup
       aria-labelledby="Select one item"
       defaultValue={userType}
       name="form"
       accentColor="#4169e1"
-      native
       onValueChange={(value: string) => setUserType(value)}
     >
       <YStack width={300} alignItems="center" space="$2">

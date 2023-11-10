@@ -1,11 +1,11 @@
-import { RefreshControl, Text, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import { ScrollView, Separator, YStack } from "tamagui";
 import { useQuery } from "@apollo/client";
+import React, { useState } from "react";
+import { RefreshControl, StyleSheet, Text } from "react-native";
+import { ScrollView, Separator, YStack } from "tamagui";
 import DisplayCustomers from "../components/display-customers";
-import { LIST_ZELLER_CUSTOMERS } from "../query-services/list-customers";
-import LoadingSpinner from "../components/spinner";
 import RadioGroupOptions from "../components/radio-group-options";
+import LoadingSpinner from "../components/spinner";
+import { LIST_ZELLER_CUSTOMERS } from "../query-services/list-customers";
 
 export default function CustomersScreen() {
   const [userType, setUserType] = useState<string>("Admin");

@@ -6,9 +6,10 @@ import DrawerNavigation from "../components/drawer-navigation";
 // only import this from your web app, not native
 import "@tamagui/core/reset.css";
 
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { TamaguiProvider } from "tamagui";
 import config from "../tamagui.config";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { GRAPHQL_API_URL } from "../config/settings";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -26,7 +27,7 @@ export default function RootLayout() {
 
   const client = new ApolloClient({
     cache: new InMemoryCache(),
-    uri: "http://localhost:9002/graphql",
+    uri: GRAPHQL_API_URL,
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
