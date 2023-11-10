@@ -1,11 +1,10 @@
 import React from "react";
-import { Label, RadioGroup, SizeTokens, XStack } from "tamagui";
+import { Label, RadioGroup, XStack } from "tamagui";
+import { type RadioGroupItemWithLabelProps } from "../utils/types";
 
-export default function RadioGroupItemWithLabel(props: {
-  size: SizeTokens;
-  value: string;
-  label: string;
-}) {
+export default function RadioGroupItemWithLabel(
+  props: RadioGroupItemWithLabelProps
+) {
   const id = `radiogroup-${props.value}`;
   return (
     <XStack width={300} alignItems="center" space="$4">
