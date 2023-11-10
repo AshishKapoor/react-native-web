@@ -34,9 +34,10 @@ For Android
 
 ### Screenshots
 ## iOS
-![Simulator Screenshot - iPhone 15 - 2023-11-10 at 15 56 23](https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/f118f7a7-eef8-4379-9769-d71c31c37f7a)
+<img width="448" alt="Screenshot 2023-11-10 at 5 04 48 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/f224a2da-54e4-426c-ac36-5ce7d80639ae">
+<img width="448" alt="Screenshot 2023-11-10 at 5 04 52 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/5177d63c-a3c5-401a-b43f-9a078e4111e8">
+<img width="448" alt="Screenshot 2023-11-10 at 5 04 55 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/6a499875-813e-45a7-b4c5-8390e2f85fb6">
 
-![Simulator Screenshot - iPhone 15 - 2023-11-10 at 15 56 16](https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/7f16ae51-ebd6-48a7-8be0-cf8e4fc31390)
 
 ## Web
 <img width="1425" alt="Screenshot 2023-11-10 at 3 59 52 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/dbbe350c-5e61-45c4-bde4-e20c16befeee">
