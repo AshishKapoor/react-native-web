@@ -1,14 +1,14 @@
 import { RefreshControl, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { ScrollView, RadioGroup, Separator, YStack } from "tamagui";
-import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
+import { ScrollView, Separator, YStack } from "tamagui";
 import { useQuery } from "@apollo/client";
 import DisplayCustomers from "../components/display-customers";
 import { LIST_ZELLER_CUSTOMERS } from "../query-services/list-customers";
 import LoadingSpinner from "../components/spinner";
+import RadioGroupOptions from "../components/radio-group-options";
 
 export default function CustomersScreen() {
-  const [userType, setUserType] = useState("Admin");
+  const [userType, setUserType] = useState<string>("Admin");
 
   const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
     variables: {
@@ -24,20 +24,6 @@ export default function CustomersScreen() {
 
   if (loading) return <LoadingSpinner />;
 
-  const renderUserTypeOptions = () => (
-    <RadioGroup
-      aria-labelledby="Select one item"
-      defaultValue={userType}
-      name="form"
-      onValueChange={(value: string) => setUserType(value)}
-    >
-      <YStack width={300} alignItems="center" space="$2">
-        <RadioGroupItemWithLabel size="$3" value="Admin" label="Admin" />
-        <RadioGroupItemWithLabel size="$3" value="Manager" label="Manager" />
-      </YStack>
-    </RadioGroup>
-  );
-
   return (
     <ScrollView
       style={styles.container}
@@ -52,7 +38,7 @@ export default function CustomersScreen() {
         marginVertical={20}
       >
         <Text style={styles.title}>User Types</Text>
-        {renderUserTypeOptions()}
+        <RadioGroupOptions userType={userType} setUserType={setUserType} />
         <Separator marginVertical={20} />
         <Text style={styles.title}>{userType} Users</Text>
         <DisplayCustomers customers={filteredCustomers} />
