@@ -1,4 +1,3 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import React, { useEffect } from "react";

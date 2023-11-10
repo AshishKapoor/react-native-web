@@ -1,5 +1,5 @@
 import { RefreshControl, Text, StyleSheet } from "react-native";
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { ScrollView, RadioGroup, Separator, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
 import { useQuery } from "@apollo/client";
@@ -24,10 +24,26 @@ export default function CustomersScreen() {
 
   if (loading) return <LoadingSpinner />;
 
+  const renderUserTypeOptions = () => (
+    <RadioGroup
+      aria-labelledby="Select one item"
+      defaultValue={userType}
+      name="form"
+      onValueChange={(value: string) => setUserType(value)}
+    >
+      <YStack width={300} alignItems="center" space="$2">
+        <RadioGroupItemWithLabel size="$3" value="Admin" label="Admin" />
+        <RadioGroupItemWithLabel size="$3" value="Manager" label="Manager" />
+      </YStack>
+    </RadioGroup>
+  );
+
   return (
     <ScrollView
       style={styles.container}
-      refreshControl={<RefreshControl refreshing={loading} onRefresh={refetch} />}
+      refreshControl={
+        <RefreshControl refreshing={loading} onRefresh={refetch} />
+      }
     >
       <YStack
         width="100%"
@@ -36,21 +52,7 @@ export default function CustomersScreen() {
         marginVertical={20}
       >
         <Text style={styles.title}>User Types</Text>
-        <RadioGroup
-          aria-labelledby="Select one item"
-          defaultValue={userType}
-          name="form"
-          onValueChange={(value: string) => setUserType(value)}
-        >
-          <YStack width={300} alignItems="center" space="$2">
-            <RadioGroupItemWithLabel size="$3" value="Admin" label="Admin" />
-            <RadioGroupItemWithLabel
-              size="$3"
-              value="Manager"
-              label="Manager"
-            />
-          </YStack>
-        </RadioGroup>
+        {renderUserTypeOptions()}
         <Separator marginVertical={20} />
         <Text style={styles.title}>{userType} Users</Text>
         <DisplayCustomers customers={filteredCustomers} />
