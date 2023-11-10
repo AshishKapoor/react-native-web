@@ -9,7 +9,6 @@ import LoadingSpinner from "../components/spinner";
 
 export default function CustomersScreen() {
   const [userType, setUserType] = useState("Admin");
-  const [refreshing, setRefreshing] = React.useState(false);
 
   const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
     variables: {

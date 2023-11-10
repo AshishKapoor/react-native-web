@@ -2,16 +2,16 @@ import React from "react";
 import { Label, Square, XStack, YStack } from "tamagui";
 import { type Customer } from "../utils/types";
 
-export default function CustomerListItem(props: { customer: Customer }) {
-  return (
-    <XStack alignItems="center" space="$4" marginBottom="$6">
-      <Square size="$4" backgroundColor={"$color.blue3Light"} radiused>
-        <Label>{props?.customer?.name?.split("")[0]}</Label>
-      </Square>
-      <YStack>
-        <Label>{props?.customer?.name}</Label>
-        <Label style={{ color: "grey" }}>{props?.customer?.role}</Label>
-      </YStack>
-    </XStack>
-  );
-}
+const CustomerListItem = (props: { customer: Customer }) => (
+  <XStack alignItems="center" space="$4" marginBottom="$6">
+    <Square size="$4" backgroundColor={"$color.blue3Light"} radiused>
+      <Label>{props?.customer?.name?.split("")[0]}</Label>
+    </Square>
+    <YStack>
+      <Label>{props?.customer?.name}</Label>
+      <Label style={{ color: "grey" }}>{props?.customer?.role}</Label>
+    </YStack>
+  </XStack>
+);
+
+export default CustomerListItem;
