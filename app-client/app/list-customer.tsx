@@ -1,13 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import { RadioGroup, Separator, YStack } from "tamagui";
+import { RefreshControl, Text, StyleSheet } from "react-native";
+import React, { useState, useCallback } from "react";
+import { ScrollView, RadioGroup, Separator, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import DisplayCustomers from "../components/display-customers";
 import { LIST_ZELLER_CUSTOMERS } from "../query-services/list-customers";
+import LoadingSpinner from "../components/spinner";
 
 export default function CustomersScreen() {
   const [userType, setUserType] = useState("Admin");
+  const [refreshing, setRefreshing] = React.useState(false);
 
   const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
     variables: {
@@ -21,10 +23,13 @@ export default function CustomersScreen() {
 
   const filteredCustomers = data?.listZellerCustomers?.items;
 
-  if (loading) return <Text>Loading</Text>;
+  if (loading) return <LoadingSpinner />;
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      refreshControl={<RefreshControl refreshing={loading} onRefresh={refetch} />}
+    >
       <YStack
         width="100%"
         maxWidth={300}
@@ -48,11 +53,11 @@ export default function CustomersScreen() {
           </YStack>
         </RadioGroup>
         <Separator marginVertical={20} />
-        <Text style={styles.title}>{userType} Types</Text>
+        <Text style={styles.title}>{userType} Users</Text>
         <DisplayCustomers customers={filteredCustomers} />
         <Separator marginVertical={1} />
       </YStack>
-    </View>
+    </ScrollView>
   );
 }
 
