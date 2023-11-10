@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-// import { gql } from "../gen/__generated__/gql";
+// import { gql } from "../__generated__/gql"; // It is throwing unknown document error
 
 export const LIST_ZELLER_CUSTOMERS = gql(/* GraphQL */ `
   query ListZellerCustomers($filter: TableZellerCustomerFilterInput) {
