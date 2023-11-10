@@ -31,3 +31,18 @@ For Web
 
 For Android
 `yarn run android`
+
+### Screenshots
+## iOS
+![Simulator Screenshot - iPhone 15 - 2023-11-10 at 15 56 23](https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/f118f7a7-eef8-4379-9769-d71c31c37f7a)
+
+![Simulator Screenshot - iPhone 15 - 2023-11-10 at 15 56 16](https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/7f16ae51-ebd6-48a7-8be0-cf8e4fc31390)
+
+## Web
+<img width="1425" alt="Screenshot 2023-11-10 at 3 59 52 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/dbbe350c-5e61-45c4-bde4-e20c16befeee">
+<img width="1425" alt="Screenshot 2023-11-10 at 4 00 46 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/a8a2c907-b8e0-46bd-a5db-7fc1a11971cd">
+
+## Android
+<img width="574" alt="Screenshot 2023-11-10 at 4 05 18 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/2c480c61-2e7c-463a-b4d1-3d5a7580f3b8">
+
+TODO: Fix - Network requests are blocked on Android using Expo. 
