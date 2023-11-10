@@ -9,7 +9,6 @@ import RadioGroupOptions from "../components/radio-group-options";
 
 export default function CustomersScreen() {
   const [userType, setUserType] = useState<string>("Admin");
-
   const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
     variables: {
       filter: {
@@ -19,7 +18,6 @@ export default function CustomersScreen() {
       },
     },
   });
-
   const filteredCustomers = data?.listZellerCustomers?.items;
 
   if (loading) return <LoadingSpinner />;
