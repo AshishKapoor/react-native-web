@@ -3,7 +3,7 @@
 ## Features
 - Displays a list of users that are returned by the listZellerCustomers query. The graphql schema you will need, and the connection details can be found in aws-exports.js and schema.gql.
 - Has a list of selectable user types that include Admin and Manager. Selecting a user type should perform a query against listZellerCustomers using that user type as a filter.
-- Runs on iOS or android and Web.
+- Runs on iOS, android and Web.
 - Designs for the user feature includes a drawers style navigation.
 
 ## Bonus Points
