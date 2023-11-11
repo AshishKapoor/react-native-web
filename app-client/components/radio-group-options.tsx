@@ -1,9 +1,12 @@
 import React from "react";
 import { RadioGroup, View, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
-import { type RadioGroupOptionsProps } from "../utils/types";
+import { RoleType, type RadioGroupOptionsProps } from "../utils/types";
 
-const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptionsProps) => {
+const RadioGroupOptions = ({
+  userType,
+  setUserType,
+}: RadioGroupOptionsProps) => {
   const isManager = userType === "Manager";
   const isAdmin = userType === "Admin";
   return (
@@ -12,7 +15,7 @@ const RadioGroupOptions = ({ userType, setUserType }: RadioGroupOptionsProps) =>
       defaultValue={userType}
       name="form"
       accentColor="#4169e1"
-      onValueChange={(value: string) => setUserType(value)}
+      onValueChange={(value: RoleType) => setUserType(value)}
     >
       <YStack width={300} alignItems="center" space="$2">
         <View
