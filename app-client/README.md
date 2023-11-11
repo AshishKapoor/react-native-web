@@ -41,13 +41,13 @@ For Android
 
 
 ## Web
+<img width="612" alt="Screenshot 2023-11-11 at 4 09 25 AM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/a4afdd02-8ce3-4680-a702-e07bf3587749">
+
 <img width="1425" alt="Screenshot 2023-11-10 at 3 59 52 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/523ffd5a-fbc0-4cb0-bd31-6b33130407e3">
-<img width="612" alt="Screenshot 2023-11-11 at 4 09 25 AM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/23ed3ad0-924c-4880-9624-2183ceea08e5">
 
 
 ## Android
-<img width="574" alt="Screenshot 2023-11-10 at 4 05 18 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/3e111ee4-b559-42bf-a0cb-b1beb46074e1">
-
-
 Note: For Android graphql URL should point to the IP address instead of localhost.
 <img width="530" alt="Screenshot 2023-11-11 at 12 33 28 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/c0c1f4ad-d6ad-4ec6-8944-e1991c6eb311">
+
+<img width="574" alt="Screenshot 2023-11-10 at 4 05 18 PM" src="https://github.com/AshishKapoor/zeller-rn-codechallenge/assets/5203107/3e111ee4-b559-42bf-a0cb-b1beb46074e1">
