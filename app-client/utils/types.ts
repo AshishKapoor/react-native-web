@@ -15,8 +15,8 @@ export interface RadioGroupItemWithLabelProps {
 }
 
 export interface RadioGroupOptionsProps {
-  userType: string;
-  setUserType: (value: string) => void;
+  userType: RoleType;
+  setUserType: (value: RoleType) => void;
 }
 
 export type RoleType = "Manager" | "Admin";
