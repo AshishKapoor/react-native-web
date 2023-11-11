@@ -6,9 +6,10 @@ import DisplayCustomers from "../components/display-customers";
 import RadioGroupOptions from "../components/radio-group-options";
 import LoadingSpinner from "../components/spinner";
 import { LIST_ZELLER_CUSTOMERS } from "../query-services/list-customers";
+import { type RoleType } from "../utils/types";
 
 export default function CustomersScreen() {
-  const [userType, setUserType] = useState<string>("Admin");
+  const [userType, setUserType] = useState<RoleType>("Admin");
   const { data, loading, refetch } = useQuery(LIST_ZELLER_CUSTOMERS, {
     variables: {
       filter: {
