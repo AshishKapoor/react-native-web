@@ -20,3 +20,8 @@ export interface RadioGroupOptionsProps {
 }
 
 export type RoleType = "Manager" | "Admin" | string;
+
+export interface RadioItemProps {
+  role: string;
+  selected: boolean;
+}

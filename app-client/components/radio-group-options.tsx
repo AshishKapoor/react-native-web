@@ -1,7 +1,11 @@
 import React from "react";
 import { RadioGroup, View, YStack } from "tamagui";
 import RadioGroupItemWithLabel from "../components/radio-group-item-with-label";
-import { RoleType, type RadioGroupOptionsProps } from "../utils/types";
+import {
+  RoleType,
+  type RadioGroupOptionsProps,
+  type RadioItemProps,
+} from "../utils/types";
 
 const RadioGroupOptions = ({
   userType,
@@ -9,6 +13,17 @@ const RadioGroupOptions = ({
 }: RadioGroupOptionsProps) => {
   const isManager = userType === "Manager";
   const isAdmin = userType === "Admin";
+
+  const RadioGroupItem = ({ role, selected }: RadioItemProps) => (
+    <View
+      backgroundColor={selected ? "$blue4Light" : undefined}
+      padding="$2"
+      borderRadius="$4"
+    >
+      <RadioGroupItemWithLabel size="$3" value={role} label={role} />
+    </View>
+  );
+
   return (
     <RadioGroup
       aria-labelledby="Select one item"
@@ -18,20 +33,8 @@ const RadioGroupOptions = ({
       onValueChange={(value: RoleType) => setUserType(value)}
     >
       <YStack width={300} alignItems="center" space="$2">
-        <View
-          backgroundColor={isAdmin ? "$blue4Light" : undefined}
-          padding="$2"
-          borderRadius="$4"
-        >
-          <RadioGroupItemWithLabel size="$3" value="Admin" label="Admin" />
-        </View>
-        <View
-          backgroundColor={isManager ? "$blue4Light" : undefined}
-          padding="$2"
-          borderRadius="$4"
-        >
-          <RadioGroupItemWithLabel size="$3" value="Manager" label="Manager" />
-        </View>
+        <RadioGroupItem selected={isAdmin} role="Admin" />
+        <RadioGroupItem selected={isManager} role="Manager" />
       </YStack>
     </RadioGroup>
   );
