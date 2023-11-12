@@ -1,5 +1,5 @@
 import React from "react";
-import { create, type ReactTestRendererJSON } from "react-test-renderer";
+import renderer, { create, type ReactTestRendererJSON } from "react-test-renderer";
 import Home from "../index";
 import { TamaguiProvider } from "tamagui";
 import config from "../../tamagui.config";
@@ -22,5 +22,10 @@ describe("Home screen", () => {
     expect(layout.type).toBe("Text");
     expect(layout?.props?.testID).toBe("empty-text");
     expect(screen).toBe("Empty Screen");
+  });
+
+  it("matches snapshot", () => {
+    const tree = renderer.create(HomeComponent).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
