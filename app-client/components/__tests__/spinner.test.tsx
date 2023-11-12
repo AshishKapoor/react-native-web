@@ -17,10 +17,10 @@ describe("Components/Spinner", () => {
   it("renders correctly", () => {
     const spinner = create(SpinnerComponent).toJSON() as ReactTestRendererJSON;
     const activityIndicator = spinner?.children![0];
-    expect(spinner?.type!).toBe("View");
-    expect(activityIndicator?.children![0].type!).toBe("ActivityIndicator");
+    expect(spinner?.type).toBe("View");
+    expect(activityIndicator?.children![0].type).toBe("ActivityIndicator");
     expect(activityIndicator?.props!.testID).toBe("activity-indicator");
-    expect(activityIndicator?.children![0].props!.size).toBe("large");
+    expect(activityIndicator?.children![0].props?.size).toBe("large");
   });
 
   it("matches snapshot", () => {

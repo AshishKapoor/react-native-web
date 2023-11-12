@@ -24,7 +24,7 @@ describe("Components/CustomerListItem", () => {
     const customerListItem = create(
       CustomerListItemComponent
     ).toJSON() as ReactTestRendererJSON;
-    expect(customerListItem?.type!).toBe("View");
+    expect(customerListItem?.type).toBe("View");
   });
 
   it("matches snapshot", () => {

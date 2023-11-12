@@ -40,7 +40,7 @@ describe("Components/DisplayCustomers", () => {
     const displayCustomers = create(
       DisplayCustomersComponent
     ).toJSON() as ReactTestRendererJSON;
-    expect(displayCustomers?.type!).toBe("View");
+    expect(displayCustomers?.type).toBe("View");
   });
 
   it("matches snapshot", () => {
