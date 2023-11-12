@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Spinner matches snapshot 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "paddingBottom": 13,
+      "paddingLeft": 13,
+      "paddingRight": 13,
+      "paddingTop": 13,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "stretch",
+        "flexDirection": "column",
+      }
+    }
+    testID="activity-indicator"
+  >
+    <ActivityIndicator
+      color=""
+      size="large"
+    />
+  </View>
+</View>
+`;

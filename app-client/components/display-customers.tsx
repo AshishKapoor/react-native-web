@@ -8,11 +8,14 @@ export default function DisplayCustomers(props: { customers: [Customer] }) {
 
   return (
     <>
-      {customers?.map((customer: Customer) => (
+      {customers?.map((customer: Customer) => {
+        console.log('customer: ', customer);
+        return (
+        
         <View key={customer.id}>
           <CustomerListItem customer={customer} />
         </View>
-      ))}
+      )})}
     </>
   );
 }
