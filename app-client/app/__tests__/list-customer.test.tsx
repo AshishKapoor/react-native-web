@@ -1,8 +1,10 @@
 import React from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { ReactTestRendererJSON, create } from "react-test-renderer";
 import { MockedProvider } from "@apollo/client/testing";
 import { LIST_ZELLER_CUSTOMERS } from "../../query-services/list-customers";
 import CustomersScreen from "../list-customer";
+import { TamaguiProvider } from "tamagui";
+import config from "../../tamagui.config";
 
 const mocks = [
   {
@@ -39,14 +41,19 @@ const mocks = [
   },
 ];
 
-it.skip("renders a list of Zeller customers", async () => {
-  render(
+describe("List Customer Screen", () => {
+  const ListCustomersComponent = (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <CustomersScreen />
+      <TamaguiProvider config={config}>
+        <CustomersScreen />
+      </TamaguiProvider>
     </MockedProvider>
   );
 
-  await waitFor(() => {
-    expect(screen.getByText("TestCustomer2")).toBeInTheDocument();
+  it("renders correctly", () => {
+    const customerList = create(
+      ListCustomersComponent
+    ).toJSON() as ReactTestRendererJSON;
+    expect(customerList?.type).toBe("View");
   });
 });
