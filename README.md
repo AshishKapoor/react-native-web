@@ -1,4 +1,4 @@
-# Zeller React Native Code Challenge
+# React Native Code Challenge
 
 ## 1. Goal
 Your goal is to build a React Native app that displays and filters a list of users. Designs for the application are provided, and the user list and filtering should be achieved by connecting to a provided Graphql endpoint. We are most interested in the way you structure your code, your use of typescript, and your approach to testing. 
@@ -17,9 +17,6 @@ These features are absolutely not required, however if you finish your project e
 - Implemenent a text search box that filters users by name
 - Implement a pull to refresh on the list
  
-
-## 4. Designs
-![alt text](zeller-customers-design.png)
 
 
 
