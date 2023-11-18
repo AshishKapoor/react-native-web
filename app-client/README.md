@@ -1,4 +1,4 @@
-# Zeller React Native Client App
+# React Native Client App
 
 ## Features
 - Displays a list of users that are returned by the listZellerCustomers query. The graphql schema you will need, and the connection details can be found in aws-exports.js and schema.gql.
